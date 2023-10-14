@@ -1,4 +1,7 @@
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringUtils {
 
 // Random string generator using a length given by user
@@ -43,7 +46,19 @@ public class StringUtils {
     }
 
     public static String concatString(String first, String second){
-        String concatenaion = first.concat(second);
-        return concatenaion;
+        String concatenation = first.concat(second);
+        return concatenation;
+    }
+
+    public static void searchString(String concatenation, String regex){
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(concatenation);
+
+        if (matcher.find()) {
+            System.out.println("match found!");
+        }
+        else
+            System.out.println("match not found!");
+
     }
 }

@@ -11,23 +11,27 @@ public class Main {
 
         //Creating a random string using the given length
         String simpleString = StringUtils.randomStringGenerator(length);
-        System.out.println("Your random string is:  " + simpleString);
+        System.out.println("\nYour random string is:  " + simpleString);
 
         //Creating a random String using the given regular expression and length by user
-        System.out.print("Enter the pattern of your String: ");
+        System.out.print("\nEnter the pattern of your String: ");
         String regex = scanner.next();
         String regexString = StringUtils.regexStringGenerator(regex , length);
-        System.out.println("your designed String is: " + regexString );
+        System.out.println("\nyour designed String is: " + regexString );
 
         //Sorting the lists
         String SortedFirst = StringUtils.sortString(simpleString);
-        System.out.println("your first String after sorting will be: " + SortedFirst);
+        System.out.println("\nyour first String after sorting will be: " + SortedFirst);
 
         String SortedRegex = StringUtils.sortString(regexString);
-        System.out.println("your designed String after sorting will be: " + SortedRegex);
+        System.out.println("\nyour designed String after sorting will be: " + SortedRegex);
 
         //concatenation of these 2 Strings will be:
         String concat = StringUtils.concatString(SortedFirst, SortedRegex);
-        System.out.println("the concatenation of these 2 Strings will be: " +concat );
+        System.out.println("\nthe concatenation of these 2 Strings will be: " +concat );
+
+        //Search through the concatened String using a specific regex
+        System.out.println("\nSearching through the final String...");
+        StringUtils.searchString(concat, "this\s+is\s+text");
     }
 }
